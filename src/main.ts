@@ -12,7 +12,7 @@ const camera = new THREE.PerspectiveCamera(
   0.1,
   1000
 );
-camera.position.z = 5;
+camera.position.z = 7;
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(sizes.width, sizes.height);
@@ -23,7 +23,7 @@ const material = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
 
 const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
 const cube = new THREE.Mesh(cubeGeometry, material);
-cube.position.x = -3;
+cube.position.y = -3;
 scene.add(cube);
 
 const planeGeometry = new THREE.PlaneGeometry(1, 1);
@@ -32,7 +32,7 @@ scene.add(plane);
 
 const torusGeometry = new THREE.TorusGeometry(1);
 const torus = new THREE.Mesh(torusGeometry, material);
-torus.position.x = 3;
+torus.position.y = 3;
 scene.add(torus);
 
 document
