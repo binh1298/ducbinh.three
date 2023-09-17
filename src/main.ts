@@ -18,7 +18,7 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(sizes.width, sizes.height);
 
 const textureLoader = new THREE.TextureLoader();
-const matcapTexture = textureLoader.load("/matcaps/8.png");
+const matcapTexture = textureLoader.load("/matcaps/2.png");
 const material = new THREE.MeshMatcapMaterial({ matcap: matcapTexture });
 
 const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
