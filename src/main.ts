@@ -1,5 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 const sizes = {
   width: window.innerWidth,
@@ -16,6 +17,8 @@ camera.position.z = 7;
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(sizes.width, sizes.height);
+
+const controls = new OrbitControls(camera, renderer.domElement);
 
 const textureLoader = new THREE.TextureLoader();
 const matcapTexture = textureLoader.load("/matcaps/2.png");
@@ -65,6 +68,7 @@ function animate() {
   rotate(plane, elapsedTime);
   rotate(torus, elapsedTime);
 
+  controls.update();
   renderer.render(scene, camera);
 
   window.requestAnimationFrame(animate);
